@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素权重与继承</title>
+    <style>
+        *{
+            color: red;
+        }
+        h3{
+            color: green;
+        }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>!important 无限大</li>
+      <li>行内样式1000</li>
+      <li>id 100</li>
+      <li>class 类属性选择器10</li>
+      <li>标签选择器， 伪元素 1</li>
+      <li>* 0</li>
+      <li>继承null</li>
+    </ul>
+    <h3>
+      元素的继承
+      <p>一般继承是文本属性</p>
+    </h3>
+  </body>
+</html>
