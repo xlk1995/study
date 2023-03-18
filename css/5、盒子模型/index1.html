@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>补充知识</title>
+    <style>
+        .raduis{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 30px;
+        }
+        ul{
+            border: 1px solid red;
+        }
+        ul li:nth-of-type(1){
+            display: none;
+        }
+        ul li:nth-of-type(2){
+            visibility: hidden;
+        }
+        ul li:nth-of-type(3){
+            opacity: 0;
+        }
+        .p{
+            height: 200px;
+            width: 200px;
+            border: 1px solid firebrick;
+            overflow: hidden;
+            /* white-space: nowrap; */
+            /* text-overflow: ellipsis; */
+            display: -webkit-box;
+            -webkit-line-clamp: 9;
+            -webkit-box-orient: vertical;
+        }
+
+        .test{
+            height: 100px;
+            background-color: red;
+            min-width: 800px;
+            max-width: 850px;
+        }
+        .main{
+            background-color: seagreen;
+            height: 200px;
+        }
+        .main span{
+            display: inline-block;
+            border: 1px solid red;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+        .main1{
+            background-color: seagreen;
+            height: 200px;
+        }
+        .main1 p{
+            background-color: greenyellow; 
+            width: fit-content;
+            margin: 0 auto;   
+        }
+
+        .main2{
+            background-color: salmon;
+            width: min-content;
+        }
+        .main2 div{
+            word-break: break-all;
+
+        }
+        .main2 div:nth-child(1){
+            width: 80px;
+        }
+        .main3{
+            background-color: salmon;
+            width: max-content;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>圆角</h1>
+    <div class="raduis"></div>
+    
+    <h1>控制显示隐藏</h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <h1>溢出控制</h1>
+    <div class="p">
+        目前，共有39所高校进行强基计划招生，招生专业覆盖文、史、哲、理、工、农、医多个学科领域，具体在数学、物理、化学、生物、历史、哲学、古文字学、信息与计算科学、工程力学、核工程与核技术、航空航天等专业（类）招生。
+        目前，共有39所高校进行强基计划招生，招生专业覆盖文、史、哲、理、工、农、医多个学科领域，具体在数学、物理、化学、生物、历史、哲学、古文字学、信息与计算科学、工程力学、核工程与核技术、航空航天等专业（类）招生。
+    </div>
+
+
+    <h1>最大宽度和最小宽度</h1>
+    <div class="test">
+    </div>
+    <h1>fill-available</h1>
+    <div class="main"><span>xxxxxxxxx</span></div>
+    
+    <h1>fit-content</h1>
+
+    <div class="main1">
+        <p>xxxxxxxxxxxxxxx</p>
+    </div>
+
+
+    <h1>min-content max-content</h1>
+    <div class="main2">
+        <div>xxxxxxx.com</div>
+        <div>xxxxx</div>
+    </div>
+
+    <div class="main3">
+        <div>共有39所高校进行强基计划招生</div>
+        <div>xxxxxxxxxx</div>
+    </div>
+
+
+</body>
+</html>
