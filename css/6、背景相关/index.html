@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景相关</title>
+    <style>
+        article{
+            height: 500px;
+            overflow: auto;
+            border: dashed 10px black;
+            padding: 20px;
+            background-color: #f00;
+
+            background-clip: border-box;
+            /* background-image: url(./img/1.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100px auto;
+            background-position: top right; */
+            background-attachment: fixed;
+            background: #f00 url(./img/1.jpeg) no-repeat top right/100px auto;  
+        }
+
+        .g{
+            height: 200px;
+            /* background: linear-gradient(to right, red 30%, blue 100%); */
+            background: radial-gradient(red 0, yellow 30%, black 60%, black 100%);
+        }
+        .shadow{
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            box-shadow: 0px 0px 8px rgba(0, 0, 255, .8);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>背景</h1>
+    <article> 
+    </article>
+    <h1>渐变</h1>
+    <div class="g"></div>
+    <h1>阴影</h1>
+    
+    <div class="shadow"></div>
+
+</body>
+</html>
