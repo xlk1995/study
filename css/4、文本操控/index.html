@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文本操控</title>
+    <style>
+      /* @font-face {
+        font-family: "xlk";
+        src: url();
+      } */
+      .font {
+        font-size: 20px;
+      }
+      .font p {
+        /* font-family: serif;
+        font-size: 1em;
+        color: aqua;
+        line-height: 1.5em;
+        font-weight: 700;
+        font-style: italic; */
+        font: 400 italic 1em/1.5 serif;
+        
+        text-decoration: underline;
+        text-indent: 2em;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        text-shadow: rebeccapurple 5px 5px 2px;
+      }
+      .elli{
+        width: 200px;
+        border: 1px solid red;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        letter-spacing: 1em;
+        word-spacing: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>font相关</h1>
+    <div class="font">
+      font~~~~~
+      <p>font-size 可以写百分比 em （相对于父元素） 具体值</p>
+      <p class="elli">
+        目前，共有39所高校进行强基计划招生，招生专业覆盖文、史、哲、理、工、农、医多个学科领域，具体在数学、物理、化学、生物、历史、哲学、古文字学、信息与计算科学、工程力学、核工程与核技术、航空航天等专业（类）招生。
+      </p>
+    </div>
+  </body>
+</html>
