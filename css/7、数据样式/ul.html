@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ul</title>
+    <style>
+        ul{
+            list-style-type: none;
+            /* list-style-image: url(../6、背景相关/img/2.svg); */
+        }
+        li{
+            background: url(../6、背景相关/img/2.svg) no-repeat 0 5px/10px 10px;
+            text-indent: 2em;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .input input{
+            padding: 4px;
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+        .input{
+            position: relative;
+
+        }
+        .input::after{
+            content: '';
+            height: 1px;
+            display: block;
+            background: linear-gradient(to right, red, blue);
+        }
+        .input:hover:before{
+            content: attr(data-text);
+            position: absolute;
+            top: -40px;
+            background-color: rgba(0, 0, 0, .8);
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <div class="input" data-text="请输入100个字符之内">
+        <input type="text" >
+    </div>
+</body>
+</html>
