@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素选择器</title>
+    <style>
+        /* 简单选择器 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .c-selector{
+            color: #f00;
+        }
+        #id-selector{
+            color: #0f0;
+        }
+        /* 属性选择器 */
+        li[type]{
+            color: #00f;
+        }
+        li[type][id]{
+            color: sienna;
+        }
+        li[type*="text"]{
+            color: rgb(126, 29, 105);
+        }
+        li[type="text"]{
+            color: palegreen;
+        }
+        li[type^="text"]{
+            color: paleturquoise;
+        }
+        li[type$="text"]{
+            color: rgb(7, 49, 49);
+        }
+        li[type|="text"]{
+            color: red;
+        }
+        /* 级联选择器 */
+        .jl h1~h2{
+            color: #00f;
+        }
+        .jl h1+h2{
+            color: red;
+        }
+        .jl>h1+h2{
+            color: green;
+        }
+
+        /* 超链接伪类 */
+        a:link{
+            color: aquamarine;
+        }
+        a:visited{
+            color: blue;
+        }
+        a:focus{
+            color: palevioletred;
+        }
+        a:hover{
+            color: black;
+        }
+        a:active{
+            color: rebeccapurple;
+        }
+        .jgwl h1:first-child{
+            background-color: #00f;
+        }
+        
+        .jgwl h1:first-of-type{
+            background-color: #00f;
+        }
+
+        .jgwl h2:last-child{
+            color: green;
+        }
+
+        .jgwl h1:last-of-type{
+            background-color: red;
+        }
+        /* 偶数 2n even */
+        .ghbs ul li:nth-child(even){
+            background-color: blue;
+        }
+        /* 奇数 2n-1 odd*/
+        .ghbs ul li:nth-child(2n-1){
+            background-color: red;
+        }
+        
+        .ghbs ul li:nth-child(-n+2){
+            background-color: green;
+        }
+        /* 使用:not */
+        .ghbs ul li:nth-child(n+2):not(:nth-child(4)){
+            background-color: goldenrod;
+        }
+
+        .ghbs ul span:only-child{
+            color:  pink;
+        }
+
+
+        :empty{
+            /* border: 1px solid darkblue; */
+        }
+        :root{
+            font-size: 20px;
+        }
+
+        .search{
+            border: 1px solid red;
+            width: 200px;
+            
+        }
+        
+        .search input{
+            outline: none;
+            border: none;
+        }
+        .search input+span::after{
+            content: "seacher";
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        
+        
+
+        
+        
+        
+    </style>
+</head>
+<body>
+    <h1>常见的选择器</h1>
+    <ul>
+        <li>通用选择器*</li>
+        <li>元素选择器</li>
+        <li class="c-selector">类选择器</li>
+        <li id="id-selector">id选择器</li>
+    </ul>
+    <hr>
+    <h1>属性选择器</h1>
+    <ul>
+        <li type>type</li>
+        <li type id>type id</li>
+        <li type="xxxxtextxxxx">type id</li>
+        <li type="text">type id</li>
+        <li type="textxxxx">type id</li>
+        <li type="xxxxtext">type id</li>
+        <li type="text-com">type id</li>
+    </ul>
+    <hr>
+    <h1>级联选择器</h1>
+    <div class="jl">
+        <h1>1</h1>
+        <h2>2</h2>
+        <h2>3</h3>
+        <div>
+            <h1>d1</h1>
+            <h2>d2</h2>
+        </div>
+    </div>
+
+    <hr>
+    <div class="wl">
+        <h1>伪类</h1>
+    <h3>超链接伪类</h2>
+    <a href="www.baidu.com" target="_blank">百度一下</a>
+    <hr>
+    <h3>结构伪类</h2>
+        <div class="jgwl">
+            <h1>1</h1>
+            <h2>2</h2>
+            <div>
+                <h3>d3</h3>
+                <h1>d1</h1>
+                <h2>d2</h2>
+            </div>
+            <h1>h1</h1>
+            <h2>h2</h2>
+        </div>
+
+        <div class="ghbs">
+            <ul>
+                <span>s1</span>
+                <li>11</li>
+                <li>21</li>
+                <li>31</li>
+                <li>41</li>
+            </ul>
+        </div>
+
+        <hr>
+        <h3>表单伪类</h3>
+        <div class="bdwl">
+            查文档
+        </div>
+
+    </div>
+
+    <hr>
+    <h3>:before :after 模拟搜索框</h3>
+    <div class="search">
+        <input type="text"><span></span>
+    </div>
+    
+    
+    
+</body>
+</html>
