@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+
+    <style>
+        .main{
+            height: 400px;
+            width: 400px;
+            background-color: red;
+            position: relative;
+        }
+        .test{
+            height: 200px;
+            width: 200px;
+            background-color: #00f;
+
+        }
+        .main .one{
+            
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        .one1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .one1-wrapper{
+            width: 300px;
+            height: 300px;
+            background-color: #f0f;
+            top: 20px;
+            left: 20px;
+            position: absolute;
+        }
+        .one2{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+            position: relative;
+            z-index: 999;
+
+        }
+
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: #0f0;
+            position: relative;
+            
+        }
+        .box .son{
+            background-color: orange;
+            /* width: 200px; */
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            margin-right: 30px;
+            margin-left: 20px;
+        
+            right: 0;
+        }
+        .strity{
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+        .strity h3{
+            position: sticky;
+            top: 0;
+            background-color: #ccc;
+        }
+        .cart-wrapper{
+            box-sizing: border-box;
+            height: 64px;
+            background: #ccc;
+            padding-top: 25px;
+            margin-bottom: 200px;
+            position: relative;
+            
+        }
+        .cart-wrapper .cart{
+            border: 1px solid #f0f;
+            width: fit-content;
+            margin-left: 100px;
+            background-color: #fff;
+            position: relative;
+            z-index: 100;
+            
+        }
+        .cart-wrapper .cart:hover{
+            border-bottom: none;
+            
+        }
+        .cart-wrapper .cart:hover +.expand{
+            display: block;
+        }
+        
+        .cart-wrapper .expand{
+            border: 1px solid #f0f;
+            position: absolute;
+            height: 100px;
+            width: 200px;
+            top: 46px;
+            background-color: #fff;
+            z-index: 10;
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <p>相对定位， 绝对定位， 固定定位， 粘性定位</p>
+    <p>是相对于什么来进行定位的</p>
+    <p>如何控制宽高</p>
+    <p>z-index的使用， 同级比较</p>
+    <p>购物车案例</p>
+    <hr>
+
+    <div class="main">
+        <div class="one test"></div>
+    </div>
+    <hr>
+
+    <div class="main">
+        <div class="one1-wrapper">
+            <div class="one1 test"></div>
+            <div class="one2"></div>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="box">
+        <div class="son"></div>
+    </div>
+    <hr>
+
+    <div class="strity">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+        <div>32</div>
+        <div>33</div>
+        <div>34</div>
+        <div>35</div>
+        <div>36</div>
+        <div>37</div>
+        <div>38</div>
+        <div>39</div>
+        <div>40</div>
+        <div>41</div>
+        <div>42</div>
+        <div>43</div>
+        <div>44</div>
+        <div>45</div>
+        <div>46</div>
+        <div>47</div>
+        <div>48</div>
+        <div>49</div>
+        <div>50</div>
+        <div>51</div>
+        <div>52</div>
+        <div>53</div>
+        <div>54</div>
+        <div>55</div>
+        <div>56</div>
+        <div>57</div>
+        <div>58</div>
+        <div>59</div>
+        <div>60</div>
+        <div>61</div>
+        <div>62</div>
+        <div>63</div>
+        <div>64</div>
+        <div>65</div>
+        <div>66</div>
+        <div>67</div>
+        <div>68</div>
+        <div>69</div>
+        <div>70</div>
+        <div>71</div>
+        <div>72</div>
+        <div>73</div>
+        <div>74</div>
+        <div>75</div>
+        <div>76</div>
+        <div>77</div>
+        <div>78</div>
+        <div>79</div>
+        <div>80</div>
+        <div>81</div>
+        <div>82</div>
+        <div>83</div>
+        <div>84</div>
+        <div>85</div>
+        <div>86</div>
+        <div>87</div>
+        <div>88</div>
+        <div>89</div>
+        <div>90</div>
+        <div>91</div>
+        <div>92</div>
+        <div>93</div>
+        <div>94</div>
+        <div>95</div>
+        <div>96</div>
+        <div>97</div>
+        <div>98</div>
+        <div>99</div>
+        <div>100</div>
+        <h3>我是标题</h3>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+        <div>32</div>
+        <div>33</div>
+        <div>34</div>
+        <div>35</div>
+        <div>36</div>
+        <div>37</div>
+        <div>38</div>
+        <div>39</div>
+        <div>40</div>
+        <div>41</div>
+        <div>42</div>
+        <div>43</div>
+        <div>44</div>
+        <div>45</div>
+        <div>46</div>
+        <div>47</div>
+        <div>48</div>
+        <div>49</div>
+        <div>50</div>
+        <div>51</div>
+        <div>52</div>
+        <div>53</div>
+        <div>54</div>
+        <div>55</div>
+        <div>56</div>
+        <div>57</div>
+        <div>58</div>
+        <div>59</div>
+        <div>60</div>
+        <div>61</div>
+        <div>62</div>
+        <div>63</div>
+        <div>64</div>
+        <div>65</div>
+        <div>66</div>
+        <div>67</div>
+        <div>68</div>
+        <div>69</div>
+        <div>70</div>
+        <div>71</div>
+        <div>72</div>
+        <div>73</div>
+        <div>74</div>
+        <div>75</div>
+        <div>76</div>
+        <div>77</div>
+        <div>78</div>
+        <div>79</div>
+        <div>80</div>
+        <div>81</div>
+        <div>82</div>
+        <div>83</div>
+        <div>84</div>
+        <div>85</div>
+        <div>86</div>
+        <div>87</div>
+        <div>88</div>
+        <div>89</div>
+        <div>90</div>
+        <div>91</div>
+        <div>92</div>
+        <div>93</div>
+        <div>94</div>
+        <div>95</div>
+        <div>96</div>
+        <div>97</div>
+        <div>98</div>
+        <div>99</div>
+        <div>100</div>
+    </div>
+    <hr>
+
+    <div class="cart-wrapper">
+        <div class="cart">我的购物车</div>
+        <div class="expand">
+
+        </div>
+
+        
+    </div>
+    
+
+    
+</body>
+</html>
