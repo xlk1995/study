@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本数据类型</title>
+</head>
+<body>
+
+    <ul>
+        <li>number</li>
+        <li>string</li>
+        <li>boolean</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>object</li>
+    </ul>
+
+    <script>
+        // 原始数类型， 包装类， 数据类型装换
+        let a = 0, b = '1' ,c= true, d=undefined, e=null, f={},g = [1,2,3]
+        console.log(a, b, c, d, e, f);
+
+        // 转换为数字 Number其实是调用valueOf方法
+        console.log(typeof (b*1));
+        console.log(typeof (+b));
+        console.log(Number(d));
+        console.log(parseInt('1212fasfda'));
+        console.log(parseFloat('1.22fdsfas'));
+        console.log(Number({valueOf: () => 55555}));
+
+        // 转换为字符串， String其实是调用toString方法
+        console.log(typeof (a.toString()));
+        console.log(a + '');
+        console.log(String(a));
+        console.log(g.toString());
+        console.log(String([]));
+        console.log(String(null));
+        
+        // 转换为boolean
+        console.log(Boolean(a));
+        console.log(Boolean([]));
+        console.log(Boolean(undefined));
+        console.log(!!c);
+        console.log([] == 0);
+        if (b) {
+            console.log("为true");
+        }
+        
+        // Number类型的方法
+        console.log("******Number类型的方法*********");
+        const num = 1.23
+        console.log(num.toFixed(1));
+        console.log(Math.floor(num));
+        console.log(Math.ceil(num));
+        console.log(Math.round(num));
+
+        // 随机数 0-5
+        console.log(Math.floor(Math.random()*6));
+        
+        // 随机数 2-10
+        console.log(2 + Math.floor(Math.random()*(10 - 2 + 1)));
+
+        console.log("**********String类型的方法**********");
+        // crud
+        let str = "abcdefghijk"
+        str += "l"
+        console.log(str);
+        console.log(str.charAt(0));
+        console.log(str[1]);
+        // 字符不可以修改
+        str[1] = 'm'
+        console.log(str);
+        
+        // 截取
+        console.log(str.slice(1, 3));
+        console.log(str.substring(1, 3));
+        console.log(str.substr(1, 2));
+
+        console.log(str.slice(2));
+        console.log(str.substring(2));
+        console.log(str.substr(2));
+
+        console.log(str.slice(-3, -1));
+        console.log(str.substring(-3, -1));
+        console.log(str.substr(-3, 2));
+        
+        // 查询
+        console.log(str.indexOf('a', 5));
+        console.log(str.includes('ac'));
+        console.log(str.startsWith("a", 5));
+        console.log(str.endsWith("f"));
+        
+        // 重复
+        console.log('*'.repeat(10));
+        // 补位数
+        console.log('*'.padStart(2, 0));
+        console.log('*'.padEnd(2, '-'));
+        // 拆为数组， 反转字符串
+        console.log(str.split("").reverse().join(""));
+
+        // 时间函数
+        const date = new Date()
+        console.log(Date.now());
+        console.log(+date);
+        console.log(date.getTime());
+        const date1 = new Date("2001/01/01 10:10:10")
+        console.log(date1);
+
+        function dateFormat(date = new Date(), option='YYYY年MM/dd HH:mm:ss'){
+            
+            const config = {
+                YYYY: date.getFullYear(),
+                MM: date.getMonth() + 1,
+                dd: date.getDate(),
+                HH: date.getHours(),
+                mm: date.getMinutes(),
+                ss: date.getSeconds()
+            }
+            for (const key in config) {
+                
+                option = option.replace(key, config[key])
+            }
+            return option
+        }
+
+        console.log(dateFormat());
+
+
+        
+        
+        
+
+        
+
+
+        
+
+        
+        
+    </script>
+    
+</body>
+</html>
