@@ -31,8 +31,8 @@ arr1.forEach((item, index, arr)=>{
 const arr2 = [1, 2, 100,  3,  200, 2 , 200]
 
 // 求和
-const res = arr2.reduce((pre, value) => {
-    console.log(pre, value);
+const res = arr2.reduce((pre, value, index) => {
+    console.log(pre, value, index);
     return pre + value
 },0)
 
