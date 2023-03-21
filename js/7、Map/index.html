@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <div class="desc">
+      <div desc="描述一">1</div>
+      <div desc="描述二">2</div>
+    </div>
+  </body>
+  <script>
+    // 对象的键只能是字符串， map的键可以是任何值
+    const s1 = Symbol();
+    const objKey = {};
+    const obj = {
+      [s1]: 1,
+      [objKey]: 2,
+    };
+    console.log(obj);
+    console.log(obj["[object Object]"]);
+
+    const map = new Map();
+    map.set(objKey, 1);
+    console.log(map);
+    console.log(map.get(objKey));
+
+    const map1 = new Map([
+      ["name", "xx"],
+      ["age", 19],
+    ]);
+
+    console.log(map1.keys());
+    console.log(map1.values());
+    console.log(map1.entries());
+
+    for (const [key, value] of map1) {
+      console.log(`${key} => ${value}`);
+      // console.log(item);
+    }
+
+    map1.forEach((value, key) => {
+      console.log(`${key} => ${value}`);
+    });
+
+    console.log([...map]);
+
+    const maps = new Map();
+    const divs = document.querySelectorAll("[desc]");
+    divs.forEach((element) => {
+      // maps.set(element,{
+      //     contnet:  element.getAttribute('desc')
+      // })
+      element.addEventListener("click", function () {
+        alert(this.getAttribute("desc"));
+      });
+    });
+    maps.forEach((item, element) => {
+      element.addEventListener("click", function () {
+        alert(maps.get(element).contnet);
+      });
+    });
+    console.log(maps);
+
+    // weakMap  key必须为对象
+  </script>
+</html>
