@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    
+    <div class="set">
+        <input type="text">
+        <ul>
+        </ul>
+    </div>
+    
+    <div class="todo">
+        <ul>
+            <li>111<a href="javascript:;">x</a></li>
+            <li>222<a href="javascript:;">x</a></li>
+            <li>333<a href="javascript:;">x</a></li>
+        </ul>
+    </div>
+
+    
+    
+</body>
+    <script>
+        // set crud  
+        const set = new Set()
+        const set1 = new Set([1,2,3])
+        const set2 = new Set('abcd')
+        set.add(1)
+        console.log(set.delete(1))
+        console.log(set.clear())
+        
+        console.log(set.size);
+        console.log(set);
+        console.log(set1);
+        console.log(set2);
+        // 遍历
+        console.log(set1.values());
+        console.log(set1.keys());
+        console.log(set1.entries());
+        
+        for (const [key, value] of set1.entries()) {
+           console.log(key, value);
+        }
+        set1.forEach(item => console.log(item))
+        
+        
+        // 如何转换为数组
+        console.log([...set1]);
+        console.log(Array.from(set1));
+        // 使用数组去重
+        console.log([...new Set([1,1,2,2,3,4])]);
+        console.log([...new Set('aaabbbbccc')].join(""));
+
+        // 实现交集 差集 并集
+
+        const set3 = new Set([1, 2,3,4,5])
+        const set4 = new Set([4,5,6,7])
+        // 并
+        console.log(
+            new Set([...set3, ...set4])
+        );
+        // 交
+        console.log(
+            new Set([...set3].filter(item => set4.has(item)))
+        );
+        // 差
+        console.log(
+            new Set([...set3].filter(item => !set4.has(item)))
+        );
+
+        // 移除 set中大于5的数字
+        let set5 = new Set([1,2,3,4,5,6,7,8])
+        set5 = new Set([...set5].filter(item => item < 5))
+        console.log(set5);
+        // set实现输入框下面添加
+        
+        const obj = {
+            words: new Set(),
+            // 把值放入set中
+            set keyword(value) {
+                this.words.add(value)
+            },
+            
+            show() {
+                // 把set中添加的值放入ul中
+                const ul = document.querySelector('.set ul')
+                ul.innerHTML = ''
+                this.words.forEach(item => {
+                    ul.innerHTML += `<li>${item}</li>`
+                })
+            }
+        }
+        const inp = document.querySelector('.set input')
+        inp.addEventListener('blur', function(e) {
+            this.value = this.value.trim()
+            if (!this.value) {
+                return
+            }
+            obj.keyword = this.value
+            obj.show()
+        })
+
+        
+        // weakSet 只能存储对象 , 无法遍历获取size
+        // 使用weakSet实现todoList   
+        
+        class Todo{
+            constructor(){}
+            run(){
+                this.lis = document.querySelectorAll('ul li')
+                this.container = new WeakSet()
+                this.record()
+                this.addEvent()
+            }
+            record(){
+                this.lis.forEach(item => this.container.add(item))
+            }
+            addEvent() {
+
+                this.lis.forEach(item => {
+                    const  aElement = item.querySelector('a') 
+                    
+                    aElement.addEventListener('click', ()=>{
+                        // debugger
+                        const  liElement = aElement.parentElement
+                        if (this.container.has(liElement)) {
+                            // 有就删除
+                            liElement.classList.add("remove")
+                            this.container.delete(liElement)
+                        }else{
+                            // 没有就添加
+                            liElement.classList.remove("remove")
+                            this.container.add(liElement)
+                        }
+                        
+                    })
+                })
+            }
+        }
+        new Todo().run()
+        
+    </script>
+</html>
